@@ -323,8 +323,32 @@
     padding: 26px 22px;
     text-align: center;
   }
-  .message-box h2 { margin: 0 0 8px; font-size: 20px; font-weight: 900; }
-  .message-box p { margin: 0; font-size: 15px; color: #4a4a50; }
+  .message-box h2 { margin: 0 0 10px; font-size: 20px; font-weight: 900; line-height: 1.5; }
+  .message-box p { margin: 0; font-size: 15px; color: #4a4a50; line-height: 1.85; }
+  /* 意味のまとまりごとに改行（iPhoneのSafari・LINE内ブラウザでも有効） */
+  .message-box .ib { display: inline-block; word-break: keep-all; overflow-wrap: anywhere; }
+  .line-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: min(100%, 340px);
+    min-height: 54px;
+    margin-top: 20px;
+    padding: 12px 24px;
+    border-radius: 999px;
+    background: #06c755;
+    color: #fff;
+    font-weight: 700;
+    font-size: 16px;
+    text-decoration: none;
+    box-shadow: 0 4px 0 #04963f;
+    transition: transform .08s ease, box-shadow .08s ease, filter .15s;
+  }
+  .line-btn svg { width: 24px; height: 24px; flex: none; }
+  .line-btn:hover { filter: brightness(1.05); }
+  .line-btn:active { transform: translateY(3px); box-shadow: 0 1px 0 #04963f; }
+  .line-btn:focus-visible { outline: 3px solid #222; outline-offset: 3px; }
 
   /* ---------- footer ---------- */
   footer {
@@ -580,8 +604,8 @@
   <section class="message">
     <div class="wrap">
       <div class="message-box">
-        <h2>感想、ぜひ聞かせてください</h2>
-        <p>読んでみた感想や、授業づくりで困っていることがあれば、<br>公式LINEにお気軽にメッセージを送ってくださいね。</p>
+        <h2><span class="ib">感想、</span><span class="ib">ぜひ聞かせてください</span></h2>
+        <p><span class="ib">読んでみた感想や、</span><span class="ib">授業づくりで<wbr>困っていることが<wbr>あれば、</span><br><span class="ib">公式LINEに<wbr>お気軽に</span><span class="ib">メッセージを<wbr>送って<wbr>くださいね。</span></p>
       </div>
     </div>
   </section>
