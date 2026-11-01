@@ -40,7 +40,10 @@
   img { max-width: 100%; display: block; }
   a { color: inherit; }
   .wrap { width: min(1080px, 100% - 32px); margin-inline: auto; }
-  h1, h2, h3, .card-catch, .lead, .group-sub { word-break: auto-phrase; }
+  /* 文節（<wbr>）の位置でだけ改行する。iPhoneのSafari・LINE内ブラウザでも有効 */
+  body { word-break: keep-all; overflow-wrap: anywhere; line-break: strict; }
+  h1, h2, h3, .card-catch, .group-sub, .message-box p { text-wrap: balance; }
+  p, li { text-wrap: pretty; }
 
   /* ---------- hero ---------- */
   .hero {
@@ -194,6 +197,7 @@
     color: var(--sub);
   }
   .tip b { color: var(--ink); }
+  .tip .tip-head { display: block; margin-bottom: 2px; }
   @media (min-width: 860px) {
     .steps { grid-template-columns: repeat(3, 1fr); gap: 18px; }
   }
@@ -362,7 +366,7 @@
     <div class="hero-text">
       <p class="label">公式LINE限定</p>
       <h1>授業づくり<span class="row2"><span class="mark"><span class="num">10</span>大特典</span></span></h1>
-      <p class="lead">ご登録ありがとうございます！<br><strong>明日からの授業準備がぐっとラクになる10冊のPDF</strong>をご用意しました。気になるものから、ぜひ受け取ってください。</p>
+      <p class="lead">ご登録<wbr>ありがとう<wbr>ございます！<br><strong>明日からの<wbr>授業準備が<wbr>ぐっと<wbr>ラクになる<wbr>10冊のPDF</strong>を<wbr>ご用意<wbr>しました。<br>気になる<wbr>ものから、<wbr>ぜひ<wbr>受け取って<wbr>ください。</p>
       <a class="hero-cta" href="#list">
         特典を受け取る
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -378,11 +382,11 @@
       <div class="howto-box">
         <h2 class="sec-title">受け取り方</h2>
         <ol class="steps">
-          <li><span class="n">1</span><span>気になる特典の<b>「PDFを開いて受け取る」</b>をタップ</span></li>
-          <li><span class="n">2</span><span>PDFが開いたら、共有ボタンから<b>「ファイルに保存」</b>などで端末に保存</span></li>
-          <li><span class="n">3</span><span>授業準備のときに、いつでも見返せます</span></li>
+          <li><span class="n">1</span><span>気になる<wbr>特典の<wbr><b>「PDFを<wbr>開いて<wbr>受け取る」</b>を<wbr>タップ</span></li>
+          <li><span class="n">2</span><span>PDFが<wbr>開いたら、<wbr>共有ボタンから<wbr><b>「ファイルに<wbr>保存」</b>などで<wbr>端末に<wbr>保存</span></li>
+          <li><span class="n">3</span><span>授業準備の<wbr>ときに、<wbr>いつでも<wbr>見返せます</span></li>
         </ol>
-        <p class="tip"><b>うまく開けないときは…</b> LINEアプリの中で表示している場合、画面のメニュー（「︙」や共有ボタン）から<b>「ブラウザで開く」</b>を選ぶと保存しやすくなります。</p>
+        <p class="tip"><b class="tip-head">うまく<wbr>開けないときは…</b>LINEアプリの<wbr>中で<wbr>表示している<wbr>場合は、<wbr>画面の<wbr>メニュー<wbr>（「︙」や<wbr>共有ボタン）から<wbr><b>「ブラウザで<wbr>開く」</b>を<wbr>選ぶと<wbr>保存しやすく<wbr>なります。</p>
       </div>
     </div>
   </section>
@@ -391,8 +395,8 @@
       <section class="group">
         <div class="group-head">
           <p class="group-step">STEP 1</p>
-          <h2 class="group-title">まずはここから</h2>
-          <p class="group-sub">授業づくりの全体像をつかむ3冊</p>
+          <h2 class="group-title">まずは<wbr>ここから</h2>
+          <p class="group-sub">授業づくりの<wbr>全体像を<wbr>つかむ<wbr>3冊</p>
         </div>
         <div class="grid">
         <article class="card" style="--c:#e83870">
@@ -401,9 +405,9 @@
           </a>
           <div class="card-body">
             <p class="badge"><span>特典</span>01</p>
-            <h3 class="card-title">授業づくりの最短ルート</h3>
-            <p class="card-catch">授業準備は、頑張り方より順番</p>
-            <p class="card-desc">授業準備、何から始めればいいか分からない…。そんな先生が、順番で考えられる1冊です。</p>
+            <h3 class="card-title">授業づくりの<wbr>最短ルート</h3>
+            <p class="card-catch">授業準備は、<wbr>頑張り方より<wbr>順番</p>
+            <p class="card-desc">授業準備、<wbr>何から<wbr>始めれば<wbr>いいか<wbr>分からない…。<wbr>そんな<wbr>先生が、<wbr>順番で<wbr>考えられる<wbr>1冊です。</p>
             <p class="card-meta">PDF・全4ページ</p>
           </div>
           <a class="btn" href="tokuten01.pdf" target="_blank" rel="noopener">
@@ -417,9 +421,9 @@
           </a>
           <div class="card-body">
             <p class="badge"><span>特典</span>02</p>
-            <h3 class="card-title">授業づくりの実践例</h3>
-            <p class="card-catch">そのまま使える！授業づくりのリアルな流れ</p>
-            <p class="card-desc">実際の授業ってどうやってつくるの？そんな疑問に応える、すぐに使える実践例を集めました。</p>
+            <h3 class="card-title">授業づくりの<wbr>実践例</h3>
+            <p class="card-catch">そのまま<wbr>使える！<wbr>授業づくりの<wbr>リアルな<wbr>流れ</p>
+            <p class="card-desc">実際の<wbr>授業って<wbr>どうやって<wbr>つくるの？<wbr>そんな<wbr>疑問に<wbr>応える、<wbr>すぐに<wbr>使える<wbr>実践例を<wbr>集めました。</p>
             <p class="card-meta">PDF・全7ページ</p>
           </div>
           <a class="btn" href="tokuten02.pdf" target="_blank" rel="noopener">
@@ -433,9 +437,9 @@
           </a>
           <div class="card-body">
             <p class="badge"><span>特典</span>03</p>
-            <h3 class="card-title">授業設計シート</h3>
-            <p class="card-catch">書き込むだけで、授業づくりが完成</p>
-            <p class="card-desc">何から考えればいいか分からない…。そんな先生が、書き込むだけで授業を整理できるシートです。</p>
+            <h3 class="card-title">授業設計<wbr>シート</h3>
+            <p class="card-catch">書き込むだけで、<wbr>授業づくりが<wbr>完成</p>
+            <p class="card-desc">何から<wbr>考えれば<wbr>いいか<wbr>分からない…。<wbr>そんな<wbr>先生が、<wbr>書き込むだけで<wbr>授業を<wbr>整理できる<wbr>シートです。</p>
             <p class="card-meta">PDF・全3ページ</p>
           </div>
           <a class="btn" href="tokuten03.pdf" target="_blank" rel="noopener">
@@ -448,8 +452,8 @@
       <section class="group">
         <div class="group-head">
           <p class="group-step">STEP 2</p>
-          <h2 class="group-title">場面ごとのコツ</h2>
-          <p class="group-sub">導入・板書・発問など、気になる場面から</p>
+          <h2 class="group-title">場面ごとの<wbr>コツ</h2>
+          <p class="group-sub">導入・<wbr>板書・<wbr>発問など、<wbr>気になる<wbr>場面から</p>
         </div>
         <div class="grid">
         <article class="card" style="--c:#e47326">
@@ -458,9 +462,9 @@
           </a>
           <div class="card-body">
             <p class="badge"><span>特典</span>04</p>
-            <h3 class="card-title">授業の導入10選</h3>
-            <p class="card-catch">授業の最初、何をすればいい？</p>
-            <p class="card-desc">子どもの「知りたい！」「考えたい！」を引き出す、明日から使える導入アイデアをまとめました。</p>
+            <h3 class="card-title">授業の<wbr>導入10選</h3>
+            <p class="card-catch">授業の<wbr>最初、<wbr>何を<wbr>すればいい？</p>
+            <p class="card-desc">子どもの<wbr>「知りたい！」<wbr>「考えたい！」を<wbr>引き出す、<wbr>明日から<wbr>使える<wbr>導入アイデアを<wbr>まとめました。</p>
             <p class="card-meta">PDF・全6ページ</p>
           </div>
           <a class="btn" href="tokuten04.pdf" target="_blank" rel="noopener">
@@ -474,9 +478,9 @@
           </a>
           <div class="card-body">
             <p class="badge"><span>特典</span>05</p>
-            <h3 class="card-title">板書がうまくなる5つのコツ</h3>
-            <p class="card-catch">「何を書けばいい？」がなくなる！</p>
-            <p class="card-desc">何を残せばいいか分からない…。そんな先生が、子どもの学びが見える板書を考えられる1冊です。</p>
+            <h3 class="card-title">板書が<wbr>うまくなる<wbr>5つの<wbr>コツ</h3>
+            <p class="card-catch">「何を<wbr>書けばいい？」が<wbr>なくなる！</p>
+            <p class="card-desc">何を<wbr>残せば<wbr>いいか<wbr>分からない…。<wbr>そんな<wbr>先生が、<wbr>子どもの<wbr>学びが<wbr>見える<wbr>板書を<wbr>考えられる<wbr>1冊です。</p>
             <p class="card-meta">PDF・全5ページ</p>
           </div>
           <a class="btn" href="tokuten05.pdf" target="_blank" rel="noopener">
@@ -490,9 +494,9 @@
           </a>
           <div class="card-body">
             <p class="badge"><span>特典</span>06</p>
-            <h3 class="card-title">学習計画の立て方</h3>
-            <p class="card-catch">子どもの「やりたい」を「必要な学び」につなげる</p>
-            <p class="card-desc">子どもと一緒に考えるって難しそう…。そんな先生が、子どもと学びの見通しをつくれる1冊です。</p>
+            <h3 class="card-title">学習計画の<wbr>立て方</h3>
+            <p class="card-catch">子どもの<wbr>「やりたい」を<wbr>「必要な<wbr>学び」に<wbr>つなげる</p>
+            <p class="card-desc">子どもと<wbr>一緒に<wbr>考えるって<wbr>難しそう…。<wbr>そんな<wbr>先生が、<wbr>子どもと<wbr>学びの<wbr>見通しを<wbr>つくれる<wbr>1冊です。</p>
             <p class="card-meta">PDF・全5ページ</p>
           </div>
           <a class="btn" href="tokuten06.pdf" target="_blank" rel="noopener">
@@ -506,9 +510,9 @@
           </a>
           <div class="card-body">
             <p class="badge"><span>特典</span>07</p>
-            <h3 class="card-title">振り返りの方法</h3>
-            <p class="card-catch">振り返りは、書き方より視点</p>
-            <p class="card-desc">振り返りを書かせても「楽しかった」ばかり…。そんな先生が、学びが見える振り返りを考えられる1冊です。</p>
+            <h3 class="card-title">振り返りの<wbr>方法</h3>
+            <p class="card-catch">振り返りは、<wbr>書き方より<wbr>視点</p>
+            <p class="card-desc">振り返りを<wbr>書かせても<wbr>「楽しかった」<wbr>ばかり…。<wbr>そんな<wbr>先生が、<wbr>学びが<wbr>見える<wbr>振り返りを<wbr>考えられる<wbr>1冊です。</p>
             <p class="card-meta">PDF・全5ページ</p>
           </div>
           <a class="btn" href="tokuten07.pdf" target="_blank" rel="noopener">
@@ -522,9 +526,9 @@
           </a>
           <div class="card-body">
             <p class="badge"><span>特典</span>08</p>
-            <h3 class="card-title">発問の仕方</h3>
-            <p class="card-catch">「何を聞けばいい？」がなくなる！</p>
-            <p class="card-desc">反応が返ってこない、いつも同じ問いかけになる…。そんな先生が、子どもの思考を引き出す発問を考えられる1冊です。</p>
+            <h3 class="card-title">発問の<wbr>仕方</h3>
+            <p class="card-catch">「何を<wbr>聞けばいい？」が<wbr>なくなる！</p>
+            <p class="card-desc">反応が<wbr>返ってこない、<wbr>いつも<wbr>同じ<wbr>問いかけに<wbr>なる…。<wbr>そんな<wbr>先生が、<wbr>子どもの<wbr>思考を<wbr>引き出す<wbr>発問を<wbr>考えられる<wbr>1冊です。</p>
             <p class="card-meta">PDF・全5ページ</p>
           </div>
           <a class="btn" href="tokuten08.pdf" target="_blank" rel="noopener">
@@ -538,9 +542,9 @@
           </a>
           <div class="card-body">
             <p class="badge"><span>特典</span>09</p>
-            <h3 class="card-title">話し合い活動</h3>
-            <p class="card-catch">「隣の人と話して」で終わらせない！</p>
-            <p class="card-desc">何を話せばいいか、誰と何人で話させればいいか分からない…。そんな先生が、目的に合わせた話し合い活動を考えられる1冊です。</p>
+            <h3 class="card-title">話し合い<wbr>活動</h3>
+            <p class="card-catch">「隣の<wbr>人と<wbr>話して」で<wbr>終わらせない！</p>
+            <p class="card-desc">何を<wbr>話せば<wbr>いいか、<wbr>誰と<wbr>何人で<wbr>話させれば<wbr>いいか<wbr>分からない…。<wbr>そんな<wbr>先生が、<wbr>目的に<wbr>合わせた<wbr>話し合い活動を<wbr>考えられる<wbr>1冊です。</p>
             <p class="card-meta">PDF・全5ページ</p>
           </div>
           <a class="btn" href="tokuten09.pdf" target="_blank" rel="noopener">
@@ -553,8 +557,8 @@
       <section class="group">
         <div class="group-head">
           <p class="group-step">STEP 3</p>
-          <h2 class="group-title">AIで準備を時短</h2>
-          <p class="group-sub">授業準備にAIを取り入れたい先生へ</p>
+          <h2 class="group-title">AIで<wbr>準備を<wbr>時短</h2>
+          <p class="group-sub">授業準備に<wbr>AIを<wbr>取り入れたい<wbr>先生へ</p>
         </div>
         <div class="grid grid-single">
         <article class="card" style="--c:#e8406f">
@@ -563,9 +567,9 @@
           </a>
           <div class="card-body">
             <p class="badge"><span>特典</span>10</p>
-            <h3 class="card-title">授業づくりのAIプロンプト30選</h3>
-            <p class="card-catch">「何を入力すればいい？」がなくなる！</p>
-            <p class="card-desc">ChatGPTを使いたいけど、何を入力すればいいか分からない…。そんな先生のために、授業づくりですぐ使える30のプロンプトをまとめました。</p>
+            <h3 class="card-title">授業づくりの<wbr>AIプロンプト<wbr>30選</h3>
+            <p class="card-catch">「何を<wbr>入力すればいい？」が<wbr>なくなる！</p>
+            <p class="card-desc">ChatGPTを<wbr>使いたいけど、<wbr>何を<wbr>入力すれば<wbr>いいか<wbr>分からない…。<wbr>そんな<wbr>先生の<wbr>ために、<wbr>授業づくりで<wbr>すぐ<wbr>使える<wbr>30の<wbr>プロンプトを<wbr>まとめました。</p>
             <p class="card-meta">PDF・全8ページ</p>
           </div>
           <a class="btn" href="tokuten10.pdf" target="_blank" rel="noopener">
@@ -580,8 +584,8 @@
   <section class="message">
     <div class="wrap">
       <div class="message-box">
-        <h2>感想、ぜひ聞かせてください</h2>
-        <p>読んでみた感想や、授業づくりで困っていることがあれば、<br>公式LINEにお気軽にメッセージを送ってくださいね。</p>
+        <h2>感想、<wbr>ぜひ<wbr>聞かせて<wbr>ください</h2>
+        <p>読んでみた<wbr>感想や、<wbr>授業づくりで<wbr>困っている<wbr>ことがあれば、<wbr>公式LINEに<wbr>お気軽に<wbr>メッセージを<wbr>送って<wbr>くださいね。</p>
       </div>
     </div>
   </section>
@@ -593,7 +597,7 @@
       <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.3" cy="6.7" r="1.2" fill="currentColor"/></svg>
       @haru_sensei_
     </a>
-    <p>本特典は公式LINEにご登録いただいた方限定です。<br>URLやファイルの転載・再配布はご遠慮ください。</p>
+    <p>本特典は<wbr>公式LINEに<wbr>ご登録<wbr>いただいた<wbr>方限定です。<br>URLや<wbr>ファイルの<wbr>転載・<wbr>再配布は<wbr>ご遠慮<wbr>ください。</p>
     <p>&copy; 2026 はる先生</p>
   </div>
 </footer>
