@@ -46,12 +46,32 @@
   .hero {
     position: relative;
     overflow: hidden;
+    /* 斜めカラーブロック：スマホは下側の帯（表紙の後ろ）、PCは右側 */
     background:
-      radial-gradient(circle, #f9dbe6 1.6px, transparent 1.8px) 0 0 / 26px 26px,
-      linear-gradient(180deg, #fff 0%, #fff4f8 100%);
-    border-bottom: 1px solid var(--pink-line);
+      radial-gradient(circle, #f6d3df 1.4px, transparent 1.6px) 0 0 / 22px 22px,
+      #fff;
+  }
+  .hero::before, .hero::after {
+    content: "";
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    clip-path: polygon(0 30%, 100% 0, 100% 100%, 0 100%);
+  }
+  .hero::before { height: 255px; background: #fbd0de; }
+  .hero::after { height: 235px; background: var(--pink); }
+  @media (min-width: 860px) {
+    .hero {
+      background:
+        linear-gradient(115deg, transparent 0 58%, var(--pink) 58% 100%),
+        linear-gradient(115deg, transparent 0 54%, #fbd0de 54% 100%),
+        radial-gradient(circle, #f6d3df 1.4px, transparent 1.6px) 0 0 / 22px 22px,
+        #fff;
+    }
+    .hero::before, .hero::after { display: none; }
   }
   .hero-inner {
+    position: relative;
+    z-index: 1;
     display: grid;
     grid-template-columns: 1fr;
     gap: 8px;
